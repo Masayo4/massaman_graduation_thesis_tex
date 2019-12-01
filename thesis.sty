@@ -7,12 +7,15 @@
 \def\juniv#1{\gdef\@juniv{#1}}
 \def\jfaculty#1{\gdef\@jfaculty{#1}}
 \def\jauthor#1{\gdef\@jauthor{#1}}
-\def\jadvisor#1#2{\gdef\@jadvisor{#1}\gdef\@jposition{#2}}
+\def\jadvisorcaption#1{\gdef\@jadvisorcaption{\underline{#1}}}
+\def\jadvisor#1{\gdef\@jadvisor{#1}}
+% \def\jadvisor#1#2{\gdef\@jadvisor{#1}\gdef\@jposition{#2}}
 \def\jhyear#1{\gdef\@jhyear{#1}}
 \def\jsyear#1{\gdef\@jsyear{#1}}
 \def\jkeyword#1{\gdef\@jkeyword{#1}}
 \def\jproject#1{\gdef\@jproject{#1}}
 \def\jdate#1{\gdef\@jdate{#1}}
+
 
 \def\eclass#1{\gdef\@eclass{#1}}
 \def\etitle#1{\gdef\@etitle{#1}}
@@ -67,6 +70,10 @@
     \begin{lineskiptitle}
     {\huge\bf \@jtitle}
     \end{lineskiptitle}
+    \vspace{1cm}\par
+    {\LARGE \@jadvisorcaption}
+    \vspace{0.5cm}\par
+    {\LARGE \@jadvisor}
     \vfill
     {\Large \@juniv\ \@jfaculty}
     \vspace{0.5cm}\par
