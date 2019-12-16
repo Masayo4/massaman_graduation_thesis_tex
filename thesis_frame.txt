@@ -142,13 +142,98 @@ Journal of Research in Personality,Volume 79, April 2019, Pages 94-108[3]
 
 
 2. 用語の定義(関連研究がメイン)
+本章では, はじめに人間の表情についての関連研究ついてまとめる.
+ついで, 情報学の分野における表情, 特に笑顔に関する先行研究の例を取り上げる.
+最後に, 本研究において取り扱う笑顔について定義する.
+
+2.1 人と表情に関する研究
+本セクションでは, 人間の表情についての関連研究および表情と人間関係の関連性の2つについてまとめる.
+2.1.1 人間の表情について
+Ekmanは感情を表す普遍的な基本表情があるという理論を提唱した.
+その表情は7つに分類され, 怒り,嫌悪,恐怖,驚き,悲しみ,幸福に中立な表情を加えたものである.[1]
+[画像: universal facial expression]
+佐藤らが日本人に対して, Ekmanの基本表情が適用されるのかを実験した際には,
+部分的にしか日本人には適応されないことがわかったが, 驚きと幸福に関する基本表情は日本人にも
+適合することが証明されている.[2]
+[画像: emotion graph [2]]
+
+2.1.2 人間関係と表情について
+顔には年齢, 性別, 人種などの生物学的属性に加え, 口の動きからの発話情報, その人物の人となり, 感情, 意図, 関心などを読み取ることが可能である.[3]
+人はコミュニケーションをとる際に, 会話の内容などの言語コミュニケーションに加え, 表情などの非言語コミュニケーションが行われる.
+非言語コミュニケーションとは, 言葉を使わないコミュニケーションのことを指し, メラビアンによればコミュニケーションにおいて,
+非言語コミュニケーションは印象情報の93\% を占める. \cite {rule_of_Mehrabian}
+ゆえに, コミュニケーションにおいて会話内容よりも, 人の見た目や表情に意識がむく.
+表情, 特に笑顔はコミュニケーションをとる際に重要な役割を担っている.
+
+2.2 情報技術と笑顔に関する研究
+近年, 情報処理技術を用いて人の表情分析の研究が進められている.
+SONYが開発し, デジタルカメラ Cyber shotに組み込まれているスマイルシャッターなどは笑顔検出技術を用いて,
+システム搭載されている例である.実用化が進んでいるが, より笑顔を検出する精度や速さが求められている.
+[画像: sony_smile_shutter.jpg]
+(https://www.sony.jp/cyber-shot/products/DSC-T70/feature_1.html 画像引用)
+Eduardらは口角をベースとした笑顔検出器を作成し, 既存の検知方法よりも速く笑顔の検出を可能にする手法の提案をしている.[4]
+人の笑顔を顔のパーツ, 特に目や口元, 頬の動きを判断材料として, 画像処理技術および機械学習を用いて自動的に笑顔を検出するような研究が数多く行われている.
+
+他にも表情に現れる感情と, 実際に抱いている感情との違いを検出するような研究も行われている.
+実際に人同士でも相手の内面状態を知ることは非常に難しい. 不快感を抱いていたとしても 相手に悟られないように笑顔を作るなど表情と感情が一致しないケースも数多くある.
+I Gede Aris Gunadiらは,画像から機械学習を用いた作り笑顔を検出する研究[5], Neeleshらは動画を用いて作り笑顔の検出[6]を行うなど
+人の表情と内面状態との乖離を解消するような研究も進んでいる.
+
+2.3 本研究において取り扱う笑顔
+本研究では, 笑顔を内面の感情ではなく表情のみを取り扱う. 笑顔の作り方を分析し, 表出表現による自分の表情と相手の表情への嗜好判断を行う.
+笑顔の分析オープンソースであるOpenFaceの中に含まれる, Facial Action Unitを用いて行う.
+OpenFaceとはTadasらCambridge University, MultiCamp Labが作成した表情分析を行うためのツールである.
+Facial Action Unit(以下FAUとする)は,Paul Ekman,Wallace Friesenらによって1978年に開発された分析ツールかつ表情理論に基づいたFacial Action Coding System
+を使って,客観的に顔の動きをデータとして取得することのできる基本動作を定義したものである.
+[FAUの画像 https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units faus.jpg]
+[FAUの画像 https://www.cs.cmu.edu/~face/facs.htm facial_action_units.png]
+[FAUの画像 https://www.researchgate.net/figure/Facial-Action-Units-AUs-of-upper-and-lower-face_fig3_280298368 FAUs_2.png ]
+(どれつかう？)
+
+FAUにおいて,笑顔のunit番号は6(眼窩部眼輪筋),7(眼瞼部眼輪筋),12(大頬骨筋),25(翼突筋+顎二腹筋)である.
+(使うUnitをイラレでいじる)
+[画像: fau_no6]
+[画像: fau_no7]
+[画像: fau_no12]
+[画像: fau_no25] => 4つまとめた画像の方がいいかな？
+
+この4つのUnitを使用して笑顔の分析を本研究では行う.
+
+2.4 まとめ
+本章では, 現在行われている人の表情, 特に笑顔についての先行研究について整理しした.
+ついで, 本研究で扱うFacial Action Unit を用いて判断する笑顔について定義した.
+次章では本研究において使用する, Delta Smile Facial Survey Analyzer のシステムの概要および特徴について述べる.
+
+
+We don’t laugh because we’re happy– we’re happy because we laugh.(幸せだから笑うのではない笑うから幸せなのだ)[引用]
+
+[1][Paul Ekman ,Universal Facial Expression of Emotion,1970, Vol8, Number 4, CALIFORNIA MENTAL HEALTH RESEARCH DIGEST]
+[2][Sato Wataru Hyniewska Sylwia, Minemoto Kazusa, Yoshikawa Sakiko,Facial expressions of basic emotions in Japanese laypeople, Frontiers in Psychology, Feb-2019, vol 10, article 259]
+[3][高木幸子, コミュニケーションにおける表情および身体動作の役割, Waseda University Repository, 2005, Vol.51, p.25-36]
+[4][Eduard Royce, Iwan Setyawan, Ivanna K. Timotius, Smile Recognition System based on Lip Corners Identification,IEEE,
+2014 1st International Conference on Information Teclmology, Computer and Electrical Engineering (ICITACEE), 2014]
+[5][I Gede Aris Gunadi, Agus Harjoko, Retantyo Wardoyo, Neila Ramdhani, Fake Smile Detection Using Linear Support Vector Machine,
+IEEE, 2015 International Conference on Data and Software Engineering, 2015]
+[6][Neelesh Bhakt, Pankaj Joshi, Piyush Dhyani, A Novel Framework For Real And Fake Smile Detection From Videos,IEEE,
+Proceedings of the 2nd International conference on Electronics, Communication and Aerospace Technology (ICECA 2018),
+2018]
+
+
+
+<以下メモ>
 2.1 表情の分類　
 ポールエクマンによって, 表情は6つに分類される(怒り,嫌悪,恐怖,幸福,悲しみ,驚き+中立)
 幸福の表情は"笑顔"で表現される
+Ekmanの例で表情の種類は感情の動きを示す, 日本人には適応されないとされる感情も,
+幸福と驚きの話には適応されるとされている.
+
 2.2 笑顔の顔パーツの動き
 笑顔のときに動く顔のパーツとして目, 口角
 目尻が下がり, 口角が上がった時に笑顔と認識される
+
+
 2.3 本研究における笑顔の判断
+幸せだから笑うのではなく, 笑うから幸せになる理論を持ってくる[論文なんだっけ...]
 Facial Action Coding System(顔の外観によって人間の顔の動きを分類するシステム)
 [分類の画像を貼り付けておくのがよい]
 http://www.microexpressions.jp/mission.html
@@ -250,7 +335,7 @@ fpsが20だったから
 図目次
 表目次
 
-1. 序論
+1. 序論(chapter:序章,chap:introduction)
 1.1 背景
 1.1.1 人と人との繋がりで構成されている社会
 1.1.2 コミュニケーションにおける表情の重要性
@@ -263,19 +348,19 @@ fpsが20だったから
 1.4 仮説
 1.5 構成
 
-2. 本研究で使用する笑顔の定義
+2. 本研究で使用する笑顔の定義(chapter:本研究で使用する笑顔の定義,chap:smile)
 2.1 表情の分類
 2.2 笑顔における顔パーツの動き
 2.3 本研究における笑顔の判断
 2.4 まとめ
 
-3. DSFSA(Delta Smile Facial Survey Analyzer)システム
+3. DSFSA(Delta Smile Facial Survey Analyzer)システム(chapter:DSFSA(Delta Smile Facial Survey Analyzer)システム,chap:aboutDSFSA)
 3.1　DSFSAシステム概要
 3.2 DSFSAの特徴
 3.3 DSFSAの使用方法
 3.4 まとめ
 
-4. 設計(機能要件的な)
+4. 設計(機能要件的な)(chapter:設計,chap:function)
 4.1 本システムの設計概要
 システム構成図を貼り付ける
 4.2 顔検出モジュール
@@ -290,7 +375,7 @@ fpsが20だったから
 4.11 データプロットモジュール
 4.12 まとめ
 
-5. 実装
+5. 実装 (chapter:実装,chap:developing)
 5.1 ユーザーインターフェースの実装
 5.1.1 顔検出モジュールの実装
 5.1.2 笑顔検出モジュールの実装
@@ -304,6 +389,29 @@ fpsが20だったから
 5.2.1 csvデータ比較モジュールの実装
 5.2.2 データプロットモジュールの実装
 5.3 まとめ
+
+
+6. 予備実験(chapter:予備実験,chap:pre_experiment)
+6.1 表情を作成するのにかかる時間
+6.2 実験の結果・まとめ
+
+7.　評価実験(chapter:評価実験,chap:main_experiment)
+7.1 評価実験の概要
+7.2 評価実験の目的
+7.3 データ収集(ORF,キャンパス)
+7.4 ユーザー嗜好傾向分析
+7.5 自身の表情の作り方と好感をもつ笑顔との相関性
+7.5 結果
+7.6 まとめ
+
+8. 結論(chapter:結論,chap:conclusion)
+8.1 今後の展望
+8.1.1 良い関係性へこのデータが使われるのかどうか？
+8.1.2 1月の実証実験
+8.2 本論文のまとめ
+
+参考文献
+
 
 6. 予備実験
 7. 評価実験
