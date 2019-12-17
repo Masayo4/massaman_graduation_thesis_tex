@@ -7,6 +7,8 @@ RGのフォーマットを元に作成する
 進行度合いを以下に記載していく  
 ### 20191017  
 git管理開始  
+### 20191217  
+午前中: section3まで追加(全然readme書き足してなかった笑)
 ## REFERENCE  
 [先輩の参考URL](https://github.com/ymrl/thesis-template)
 
