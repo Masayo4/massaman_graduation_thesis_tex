@@ -202,7 +202,87 @@ AU04_c, AU12_c, AU15_c, AU23_c, AU28_c, AU45_c
 で作成したユーザーの笑顔動画データをユーザーごとにファイリングしてデータフォーマットとする.
 作成したデータは各ユーザーごと, 各データの種類ごとの2通りの方法でデータを保存する.
 
+\begin{itemize}
+\item ユーザーごとのデータツリー構造:
+\dirtree{%
+ .1 user\_dirname.
+ .2 FAU\_data.csv(FAUから取得したデータ).
+ .2 FAU\_data\_plot.png(FAUの値を簡易プロットしたグラフ画像).
+ .2 user\_info.txt(ユーザーの基本情報).
+ .2 rankingdata.csv(ユーザー順位づけデータ).
+ .2 output.mp4(ユーザーと選んだ笑顔動画データを並べて表示).
+ .2 user\_smile\_video.mp4(ユーザー単体の笑顔動画データ).
+}
+\end{itemize}
+
 \subsection{笑顔動画データ選択モジュールの実装}
+画像処理モジュールで生成したデータの中にあるパラメータp\_scale を使用する.
+各フレームのp\_scaleを{\sl pscale\_i}とし, フレームの総数を{\sl n}とすると,
+笑顔データ選択の際に使用するユーザーごとの指標user\_pcaleを以下のように定義する.
+\begin{equation}
+\label{pscalesum}
+pscale\_sum = \sum_{i=1}^ n pscale\_i
+\end{equation}
+
+\begin{equation}
+\label{userpscale}
+user\_pscale= \frac{pscale\_sum}{n}
+\end{equation}
+
+p\_scaleは第\ref{chap:function}章で示した, 図\ref{fig:face_balance}の様に,
+差分λで出力されるため, 各笑顔動画データのλ同士を以下のように比較演算を行う.
+ユーザーの指標user\_pcale, データベースの中にある笑顔動画データそれぞれのp\_scaleの値を,
+each\_pscaleとし, 差分differenceを以下のように定義する.
+
+\begin{equation}
+\label{difference}
+difference =
+\left(
+user\_pcale - each\_pscale
+\right)
+^2
+\end{equation}
+
+数式\ref{difference}を各データごとにもとめ, 配列格納し昇順にソートする.
+配列に格納されたデータを$x_i$と表し, 5つのデータを以下の計算式を用いて選択する.
+\begin{equation}
+\label{data1}
+data_1  = x_1
+\end{equation}
+
+\begin{equation}
+\label{data2}
+data_2 = \left\{ \begin{array}{ll}
+\frac{x_{\frac{n}{2}} + x_{\frac{n+1}{2}} }{2} & (データ数が2nの場合,nは自然数) \\
+x_{\frac{n}{2}} & (データ数が2n-1の場合,nは自然数)
+\end{array} \right.\end{equation}
+
+\begin{equation}
+  \label{data3}
+  data_3 = \left\{ \begin{array}{ll}
+  \frac{x_n + x_{n+1} }{2} & (データ数が2nの場合,nは自然数) \\
+  x_n & (データ数が2n-1の場合,nは自然数)
+  \end{array} \right.\end{equation}
+
+\begin{equation}
+  \label{data4}
+  data_4 = \left\{ \begin{array}{ll}
+  \frac{x_{\frac{3n}{2}} + x_{\frac{3n+1}{2}} }{2} & (データ数が2nの場合,nは自然数) \\
+  x_{\frac{3n}{2}} & (データ数が2n-1の場合,nは自然数)
+  \end{array} \right.\end{equation}
+
+
+\begin{equation}
+  \label{data5}
+  data_5  = \left\{ \begin{array}{ll}
+  x_{2n} & (データ数が2nの場合,nは自然数) \\
+  x_{2n-1} & (データ数が2n-1の場合,nは自然数)
+  \end{array} \right.\end{equation}
+
+数式\ref{data1}は差分の最小値,つまりユーザーの値をもつ笑顔動画データを示す.
+数式\ref{data2}は,第1四分位数,数式\ref{data3}は中央値,
+数式\ref{data4}は第3四分位数,数式\ref{data5}は差分の最大値をもつ笑顔動画データをそれぞれ示す.
+
 \subsection{表示データ作成モジュールの実装}
 \subsection{順位づけモジュールの実装}
 \subsection{データ保存モジュールの実装}
