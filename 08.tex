@@ -244,7 +244,8 @@ user\_pcale - each\_pscale
 \end{equation}
 
 数式\ref{difference}を各データごとにもとめ, 配列格納し昇順にソートする.
-配列に格納されたデータを$x_i$と表し, 5つのデータを以下の計算式を用いて選択する.
+配列に格納されたデータを$x_i$と表し, 5つのデータを算出し,それぞれのデータのindexを取得する.
+以下にデータを選出する際の計算式を記述する.
 \begin{equation}
 \label{data1}
 data_1  = x_1
@@ -282,8 +283,29 @@ x_{\frac{n}{2}} & (データ数が2n-1の場合,nは自然数)
 数式\ref{data1}は差分の最小値,つまりユーザーの値をもつ笑顔動画データを示す.
 数式\ref{data2}は,第1四分位数,数式\ref{data3}は中央値,
 数式\ref{data4}は第3四分位数,数式\ref{data5}は差分の最大値をもつ笑顔動画データをそれぞれ示す.
+上記の値によって取得したindexを用いて, 笑顔動画データを5種類選出する.
 
 \subsection{表示データ作成モジュールの実装}
+取得した5種類の笑顔動画データを点描画にするための処理を行う.
+python のライブラリdlibを使用して顔器官検出を行う.
+モデルはshape\_predictor\_68\_face\_landmarks.datを使用し, 顔の特徴点のみを表示する.
+
+\begin{figure}[htbp]
+    \begin{center}
+       \fbox{\includegraphics[width=80mm,bb=0 0 1406 1352]{dlibfacepoits.jpg}}
+    \end{center}
+    \caption{dlibを用いてた特徴点検出}
+    \label{fig:dlibfacepoits}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{center}
+       \fbox{\includegraphics[width=140mm,bb=0 0 1733 827]{face_convert.jpg}}
+    \end{center}
+    \caption{変換後の動画例}
+    \label{fig:face_convert}
+\end{figure}
+
 \subsection{順位づけモジュールの実装}
 \subsection{データ保存モジュールの実装}
 \subsection{選択データ表示モジュールの実装}
