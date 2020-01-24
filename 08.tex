@@ -364,9 +364,62 @@ python のライブラリdlibを使用して顔器官検出を行う.
 相手に表示する形を取っている.
 
 \section{データ分析機能の実装}
-作成中...
+本節では, 収集したデータを分析するためのモジュール実装について説明をする.
 \subsection{FAU値計算モジュールの実装}
+取得したcsvファイルからcsv,numpy, pandasらのライブラリを使用してデータフレーム化を行う.
+4種類の各FAUの2種類の値をデータフレーム化した後, 種類ごとにそれぞれ最大値(max), 最小値(min), 値の範囲(range), 平均値(mean), 中央値(median), 分散(pvariance), 標準偏差(psrdeev), 不偏分散(variance)の値を算出する.\\
+算出する計算式は以下の通り.\\
+(nは自然数,$a_{n}$はデータ配列とする)
+
+\begin{equation}
+\label{range}
+range  = max - min
+\end{equation}
+
+\begin{equation}
+\label{mean}
+mean( \overline{a})  =  \frac{\sum_{i=1}^n a_i}{n}
+\end{equation}
+
+  \begin{equation}
+    \label{median}
+    median = \left\{ \begin{array}{ll}
+    \frac{a_\frac{n}{2} + a_\frac{n+1}{2} }{2} & (データ数が2nの場合,nは自然数) \\
+    x_\frac{n}{2} & (データ数が2n-1の場合,nは自然数)
+    \end{array} \right.\end{equation}
+
+\begin{equation}
+\label{pvariance}
+pvariance(s^2)  =  \frac{1}{n} \sum_{i=1}^n (a_i - \overline{a})^2
+\end{equation}
+
+
+\begin{equation}
+\label{pvariance}
+psrdeev(s)  =  \sqrt{pvariance(s^2)}
+\end{equation}
+
+上記の値は, statisticsライブラリを使用して算出をする.
+配列(arr)を引数とし, 指定した代表値が返り値として算出される.
+
+\begin{itemize}
+\item 代表値算出モジュール statistics使用例:
+\begin{lstlisting}
+max       = max(arr)
+min       = min(arr)
+range     = max - min
+mean      = statistics.mean(arr)
+median    = statistics.median(arr)
+pvariance = statistics.pvariance(arr)
+pstdev    = statistics.pstdev(arr)
+variance  = statistics.variance(arr)
+\end{lstlisting}
+\end{itemize}
+
 \subsection{データプロットモジュールの実装}
+FAU計算モジュールで算出した各ユーザーのFAUデータおよび選ばれた笑顔動画データのFAUデータの値をx軸にフレーム,y軸にFAUの値をmatplot.libを使用してプロットする.
+各笑顔動画データのFAU値を全てplot, ユーザーの笑顔動画データと選択されたそれぞれ笑顔動画データの2種類をplotする2種類を各データに対して作成する.
+
 \section{まとめ}
 本章では, 本システムにおけるユーザーインターフェースの実装および, データ収集機能の各モジュールの実装,
 データ分析機能の各モジュールの実装についてまとめた.

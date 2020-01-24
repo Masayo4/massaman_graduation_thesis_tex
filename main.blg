@@ -1,0 +1,72 @@
+This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: unsrt.bst
+A level-1 auxiliary file: 00_abstract.aux
+A level-1 auxiliary file: 01.aux
+A level-1 auxiliary file: 05.aux
+A level-1 auxiliary file: 06.aux
+A level-1 auxiliary file: 07.aux
+A level-1 auxiliary file: 08.aux
+A level-1 auxiliary file: 09.aux
+A level-1 auxiliary file: 10.aux
+A level-1 auxiliary file: 11.aux
+A level-1 auxiliary file: 90_acknowledgment.aux
+A level-1 auxiliary file: 91_bibliography.aux
+A level-1 auxiliary file: 92_appendix.aux
+Database file #1: main.bib
+Warning--empty journal in mandom
+Warning--empty journal in chane_claire
+Warning--empty journal in WHO_reserch
+Warning--empty year in WHO_reserch
+Warning--empty journal in TheMailonSunday
+Warning--empty year in TheMailonSunday
+Warning--empty journal in EduardRoyce
+Warning--empty journal in IGedeArisGunadi
+Warning--empty journal in NeeleshBhakt
+Warning--empty journal in kokada
+Warning--empty journal in tadas
+Warning--empty journal in teamSMILE
+You've used 27 entries,
+            1791 wiz_defined-function locations,
+            631 strings with 8146 characters,
+and the built_in function-call counts, 5851 in all, are:
+= -- 525
+> -- 233
+< -- 5
++ -- 90
+- -- 63
+* -- 371
+:= -- 928
+add.period$ -- 79
+call.type$ -- 27
+change.case$ -- 26
+chr.to.int$ -- 0
+cite$ -- 39
+duplicate$ -- 281
+empty$ -- 560
+format.name$ -- 63
+if$ -- 1292
+int.to.chr$ -- 0
+int.to.str$ -- 27
+missing$ -- 28
+newline$ -- 136
+num.names$ -- 27
+pop$ -- 81
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 146
+stack$ -- 0
+substring$ -- 377
+swap$ -- 62
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 12
+while$ -- 62
+width$ -- 29
+write$ -- 276
+is.kanji.str$ -- 0
+(There were 12 warnings)
