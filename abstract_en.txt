@@ -1,0 +1,25 @@
+In this research we create a system that digitizes the process in which the users smile from a neutral expression, via image processing. 
+Based on the calculated values,
+the system displays five videos from the database of the process in which people smile.
+These five videos show the 68 featured points in place of the person’s face
+so that the users’ cannot identify the person from the video.
+The users then rank the videos, after which the analysis is conducted on each user,
+and the users as a group, on how the users smile, and on their smile preferences.
+The society we live in is constructed from the connections between the people.
+In order to establish this relationship, communication is crucial, especially non-verbal communication,
+and factors such as smiling can have significant influences.
+The way in which people connect have become diverse, and with this, more information is available;
+however this information has still yet to be organized.
+In the younger generations,
+many may often be disappointed when actually meeting the people that they had previously “met” online via text.
+The purpose of this research is to build a system that promotes the connection between people based on analyzing each other based on their smiles.
+This system finds a correlation between one’s smile and the smile that they prefer, and analyzes the inclination.
+By performing data-based analysis, I aim to make connect the most optimal partners to users, and encourage better encounters.
+I conducted demonstrations and evaluation experiments at the Open Research Forum hosted by Keio University Shonan Fujisawa Campus,
+and obtained datasets from 41 visitors.
+I got the value of Facial Action Units (FAU) included in OpenFace developed by Cambridge University from 36 smile video data excluding damaged data,
+and analyzed the inclination tendency for each users.
+As a result of the analysis, it was found that people tend to prefer people who relax their facial muscles before smiling.
+In the future, TeamSmile in health information consortium related with Nakazawa Laboratory,
+will incorporate the module of this system into the SmileMeter to enable the acquisition of more and more data.
+I expect that this system will play a critical role in connecting people.

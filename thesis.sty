@@ -118,7 +118,7 @@
 
 % アブストラクト用行間広め設定
 \newenvironment{lineskipabst}{%
-  \baselineskip = 1cm
+  \baselineskip = 0.5cm
 }
 
 % アブストラクトの定義（日本語）
@@ -127,7 +127,7 @@
     {\Large\bf \@jclass　\@jsyear 年度（令和\@jhyear 年度）}
     \vspace{0.5cm}\par
     \begin{lineskipabst}
-    {\LARGE\bf \@jtitle}\vspace{2cm}
+    {\LARGE\bf \@jtitle}\vspace{1cm}
     \end{lineskipabst}
   \end{center}
   \parindent=1zw
@@ -136,7 +136,7 @@
 }{
   \section*{キーワード}
   \@jkeyword \par
-  \vspace{2.5cm}\par
+  \vspace{1.0cm}\par
   {\@juniv} {\@jfaculty}
   \begin{flushright}
     {\@jauthor}
@@ -153,7 +153,7 @@
     {\Large\bf Abstract Of \@eclass\ \ \ Academic Year \@eyear}
     \vspace{0.5cm}\par
     \begin{lineskipabst}
-    {\LARGE\sf \@etitle}\vspace{2cm}
+    {\LARGE\sf \@etitle}\vspace{1cm}
     \end{lineskipabst}
   \end{center}
   \parindent=1.6zw
@@ -162,7 +162,7 @@
 }{
   \section*{Keywords}
   \@ekeyword \par
-  \vspace{2.5cm}\par
+  \vspace{1.0cm}\par
   {\@efaculty} \par
   {\@euniv}
   \begin{flushright}

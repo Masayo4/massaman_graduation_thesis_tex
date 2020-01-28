@@ -8,15 +8,15 @@
 
 % 日本語のアブストラクト
 \begin{jabstract}
-本研究はユーザーの笑顔の作り方から画像処理を行い,表情の作り方を数値化するシステムを作成する.
-算出した値を元にデータベースにある笑顔動画データをユーザーに人物が特定できないように, 表情の動きのみを5つ表示する.
-選ばれた動画に対してユーザーに順位づけをさせ, ユーザー自身の笑顔の作り方と表情ベースにおけるユーザーごと,
+本研究ではユーザーの中立の表情から,笑顔になる過程を画像処理し,数値化するシステムを作成する.
+算出した値を元にデータベースにある笑顔動画データをユーザーに人物が特定できないように, 表情の特徴68点の動きのみを5人分表示する.
+選ばれた特徴点を示した動画に対してユーザーに順位づけをさせ, ユーザー自身の笑顔の作り方と表情ベースにおけるユーザーごと,
 全ユーザーに共通した嗜好傾向の分析を行った.
 人が暮らす社会は人と人との繋がりで構成されている.人間関係を構築する際には
 コミュニケーションが必要であり, その中でも表情などの非言語コミュニケーション,
 特に笑顔は大きく影響を及ぼす.
 人との繋がり形成の場が多様化し,入り口が広くなった分情報量が多くなり,整理がうまく行えていない現状がある.若者がテキストベースのやりとりを行った後, 実際に会った際には相手にがっかりするケースが非常に多くなっている.
-本研究の目的は笑顔からお互いを分析し, 人と人との繋がりを助長するシステムの構築をである.
+本研究の目的は笑顔の作り方からお互いを分析し, 人と人との繋がりを助長するシステムの構築をである.
 自身の笑い方と, 魅力を感じる笑い方にはどのような関係性があるのかを考察し, 嗜好傾向を分析する.
 データに基づく分析を行うことで, より最適な相手をユーザーに表示し, よりよい出会いの機会提供を助長することを目指す.
 慶應義塾大学湘南藤沢キャンパス主催のOpen Reserch Forumにてデモンストレーションおよび評価実験を行い, 41人の来場者のデータを取得した. 破損データを除く36個の笑顔動画データからCambridge大学が開発したOpenFaceに含まれる,Facial Action Units(FAU)の値を算出しユーザーごとに嗜好傾向分析を行った.
@@ -29,10 +29,30 @@
 
 % 英語のアブストラクト
 \begin{eabstract}
-
-abstract\\
-English is very very very difficult for me.
-I can only use "massamanglish".
-That is "99\% body language, and 1 \% passion".
+  In this research we create a system that digitizes the process in which the users smile from a neutral expression, via image processing.
+  Based on the calculated values,
+  the system displays five videos from the database of the process in which people smile.
+  These five videos show the 68 featured points in place of the person’s face
+  so that the users’ cannot identify the person from the video.
+  The users then rank the videos, after which the analysis is conducted on each user,
+  and the users as a group, on how the users smile, and on their smile preferences.
+  The society we live in is constructed from the connections between the people.
+  In order to establish this relationship, communication is crucial, especially non-verbal communication,
+  and factors such as smiling can have significant influences.
+  The way in which people connect have become diverse, and with this, more information is available;
+  however this information has still yet to be organized.
+  In the younger generations,
+  many may often be disappointed when actually meeting the people that they had previously “met” online via text.
+  The purpose of this research is to build a system that promotes the connection between people based on analyzing each other based on their smiles.
+  This system finds a correlation between one’s smile and the smile that they prefer, and analyzes the inclination.
+  By performing data-based analysis, I aim to make connect the most optimal partners to users, and encourage better encounters.
+  I conducted demonstrations and evaluation experiments at the Open Research Forum hosted by Keio University Shonan Fujisawa Campus,
+  and obtained datasets from 41 visitors.
+  I got the value of Facial Action Units (FAU) included in OpenFace developed by Cambridge University from 36 smile video data excluding damaged data,
+  and analyzed the inclination tendency for each users.
+  As a result of the analysis, it was found that people tend to prefer people who relax their facial muscles before smiling.
+  In the future, TeamSmile in health information consortium related with Nakazawa Laboratory,
+  will incorporate the module of this system into the SmileMeter to enable the acquisition of more and more data.
+  I expect that this system will play a critical role in connecting people.
 
 \end{eabstract}
